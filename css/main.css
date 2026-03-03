@@ -105,8 +105,10 @@ body {
   border-radius: 0 0 0.5rem 0.5rem;
 }
 @media (min-width: 685px) {
-  .card {
+  .cardsContainer {
     grid-template-columns: repeat(2, minmax(auto, 310px));
+  }
+  .card {
     border-radius: 0 !important;
   }
 }
@@ -115,11 +117,11 @@ body {
     margin: 0;
   }
   .cardsContainer {
+    grid-template-columns: repeat(3, minmax(auto, 310px));
     height: 100vh;
     align-items: center;
   }
   .card {
-    grid-template-columns: repeat(3, minmax(auto, 310px));
     gap: 2.5rem;
   }
   .card:nth-of-type(1) {
