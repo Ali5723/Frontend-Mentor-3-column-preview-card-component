@@ -1,0 +1,132 @@
+/* Start FontFace */
+@font-face {
+  font-family: "Big Shoulders";
+  src: url("../assets/fonts/Big_Shoulders/BigShoulders-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../assets/fonts/Lexend_Deca/LexendDeca-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Start FontFace */
+
+/* Start Variables */
+:root {
+  /* Colors */
+  /** Primary **/
+  --Gold-500: hsl(31, 77%, 52%);
+  --Cyan-800: hsl(184, 100%, 22%);
+  --Green-950: hsl(179, 100%, 13%);
+
+  /** Neutral **/
+  /*** (paragraphs) ***/
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  /*** (background, headings, buttons) ***/
+  --Gray-100: hsl(0, 0%, 95%);
+
+  /* Typography */
+  /** rem **/
+  font-size: 15px;
+
+  /* Sizing */
+  --main-sizing: 100px;
+}
+/* End Variables */
+
+* {
+  margin: 0;
+}
+body {
+  margin: calc(var(--main-sizing) / 1.5) calc(var(--main-sizing) / 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(auto, 310px));
+  width: 100%;
+  justify-content: center;
+}
+.card {
+  padding: calc(var(--main-sizing) / 2.5);
+  background-color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 230px;
+}
+.card img {
+  padding-left: 0.5rem;
+}
+.card h1 {
+  font-family: "Big Shoulders", Arial;
+  color: var(--Gray-100);
+  text-transform: uppercase;
+  padding-left: 0.5rem;
+}
+.card p {
+  color: var(--Transparent-white);
+  font-family: "Lexend Deca", Arial;
+  line-height: 1.8;
+}
+.card button {
+  font-family: "Lexend Deca", Arial;
+  background-color: var(--Gray-100);
+  color: var(--card-color);
+  border: 0;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 450ms;
+  border: 2px solid var(--Gray-100);
+}
+.card button:hover {
+  background-color: var(--card-color);
+  color: var(--Gray-100);
+}
+.card:nth-of-type(1) {
+  --card-color: var(--Gold-500);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.card:nth-of-type(2) {
+  --card-color: var(--Cyan-800);
+}
+.card:nth-of-type(3) {
+  --card-color: var(--Green-950);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+@media (min-width: 685px) {
+  .card {
+    border-radius: 0 !important;
+  }
+}
+@media (min-width: 995px) {
+  body {
+    margin: 0;
+  }
+  .cardsContainer {
+    height: 100vh;
+    align-items: center;
+  }
+  .card {
+    gap: 2.5rem;
+  }
+  .card:nth-of-type(1) {
+    border-radius: 0.8rem 0 0 0.8rem !important;
+  }
+  .card:nth-of-type(3) {
+    border-radius: 0 0.8rem 0.8rem 0 !important;
+  }
+  .card button {
+    margin-top: 2.5rem;
+  }
+}
